@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Music Player</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    </head>
+    <body>
+        <div id="page">
+            <header>
+                <h1 class="title">Motify</h1>
+                <button onclick="themeToggle()" class="toggleButton"><i class="fa-solid fa-toggle-off"></i></button>
+            </header>
+            <div class="container">
+                <section id="allsongs">
+                    <div id="selectGenres">
+                        <label for="genre">Filter by: </label>
+                        <select name="genre" id="genre">
+                            <option value="allsongs">All Songs</option>
+                            <option value="tamil">Tamil</option>
+                            <option value="hiphop">Hip Hop</option>
+                            <option value="edm">EDM</option>
+                        </select>
+                    </div>
+                    <h2 id="genreDisplay"></h2>
+                    <div id="genreSongs"></div>
+                </section>
+                <section id="songCardContainer">
+                </section>
+                <section id="playlistContainer">
+                    <div id="createContainer">
+                        <input type="text" id="playlistInput" placeholder="Enter Playlist Name">
+                        <button id="createBtn">Create Playlist</button>
+                    </div>
+                    <div id="currentPlaylist">
+                        <h2>Current Playlist</h2>
+                        <div id="currentSongs">
+
+                        </div>
+                    </div>
+                    <div id="allPlaylists">
+                        <h2>All Playlists</h2>
+                        <div id="playlists"></div>
+                    </div>
+                </section>
+            </div>
+        </div>
+        <script src="script.js" ></script>
+    </body>
+</html>
