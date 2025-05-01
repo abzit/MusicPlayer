@@ -16,10 +16,15 @@ h2{
 header{
     display: flex;
     justify-content: space-between;
-    width: 95%;
+    width: 100%;
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     color: darkgreen;
-    margin: auto;
+}
+header h1{
+    margin-left: 10%;
+}
+header button{
+    margin-right: 0;
 }
 .toggleButton{
     background-color: transparent;
@@ -76,12 +81,14 @@ button{
 }
 
 #songCardContainer{
+    width: 30vw;
     background-color: transparent;
     border-radius: 1rem;
+    background-color: green;
 }
 #songCard{
-    width: 30vw;
-    padding: 1rem 1rem 0 1rem;
+    width: 100%;
+    /* padding: 1rem 1rem 0 1rem; */
     border-radius: 1rem 1rem 0 0;
     background-color: lightgreen;
 }
@@ -89,9 +96,9 @@ button{
     filter: invert();
 }
 #songCard img{
-    width: 100%;
-    height: 100%;
+    width: 90%;
     border-radius: 1rem;
+    margin: 5%;
     object-fit: cover;
 }
 #songCard audio{
@@ -165,3 +172,53 @@ button{
 
 
 
+@media screen and (width<480px) {
+    #page{
+        height: fit-content;
+    }
+    .container{
+        display: grid;
+        grid-template-columns: repeat(1,1fr);
+        grid-template-rows: repeat(3,auto);
+        grid-auto-rows: auto;
+        row-gap: 4rem;
+        grid-template-areas: "songCard"
+        "playlist"
+        "allSongs"
+        ;
+    }
+    #allsongs{
+        grid-area: allSongs;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+    }
+    #selectGenres{
+        margin: 5%;
+    }
+    #playlistContainer{
+        grid-area: playlist;
+        height: fit-content;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+    }
+
+    #playlistContainer button,#allsongs button{
+        margin: 5%;
+        width: 90%;
+    }
+    #playlistContainer input{
+        width: 86%;
+        margin: 5%;
+        padding: 3% 2%;
+    }
+    #playlistContainer h2,#allsongs h2{
+        margin: 5%;
+    }
+    #songCardContainer{
+        grid-area: songCard;
+        width: 100%;
+    }
+
+}
